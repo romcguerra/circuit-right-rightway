@@ -1,0 +1,51 @@
+
+
+int verde = 11;
+int azul = 12;
+int vermelho = 13;
+
+void setup () {
+  pinMode (verde, OUTPUT);
+  pinMode (azul, OUTPUT);
+  pinMode (vermelho, OUTPUT);  
+}
+
+void loop() {
+  bool func1[4]={false, false, true, true};
+  bool func2[4]={false, true, false, true};
+
+  for (int i=0; i<4; i++) {
+    digitalWrite(azul, func1[i]);
+    digitalWrite(vermelho, func2[i]);
+    digitalWrite(verde, and_port(func1[i], func2[i]));
+    delay(3000);
+  }
+  
+  for (int i=0; i<4; i++) {
+    digitalWrite(azul, func1[i]);
+    digitalWrite(vermelho, func2[i]);
+    digitalWrite(verde, or_port(func1[i], func2[i]));
+    delay(3000);
+  }
+}
+
+bool and_port(bool a, bool b) {
+  return a && b;
+}
+
+bool or_port(bool a, bool b) {
+  return a || b;
+}
+
+bool nor_port(bool a, bool b) {
+  return !(a || b);
+}
+
+bool xor_port(bool a, bool b) {
+  return !a && b || a && !b;
+}
+
+bool xnor_port(bool a, bool b) {
+  return !(!a && b || a && !b);
+}
+
