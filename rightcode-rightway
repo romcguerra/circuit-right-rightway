@@ -27,22 +27,22 @@ void loop() {
   }
 }
 
-bool and_port(bool a, bool b) {
-  return a && b;
+bool and_port(bool x, bool y) {
+  return x && y;
 }
 
-bool or_port(bool a, bool b) {
-  return a || b;
+bool or_port(bool x, bool y) {
+  return x || y;
 }
 
-bool nor_port(bool a, bool b) {
-  return !(a || b);
+bool nor_port(bool x, bool y) {
+  return !(x || y);
 }
 
-bool xor_port(bool a, bool b) {
-  return !a && b || a && !b;
+bool xor_port(bool x, bool y) {
+  return !x && y || x && !y;
 }
 
-bool xnor_port(bool a, bool b) {
-  return !(!a && b || a && !b);
+bool xnor_port(bool x, bool y) {
+  return !(!x && y || x && !y);
 }
