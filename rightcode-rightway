@@ -1,5 +1,3 @@
-
-
 int verde = 11;
 int azul = 12;
 int vermelho = 13;
@@ -18,14 +16,14 @@ void loop() {
     digitalWrite(azul, func1[i]);
     digitalWrite(vermelho, func2[i]);
     digitalWrite(verde, and_port(func1[i], func2[i]));
-    delay(3000);
+    delay(1500);
   }
   
   for (int i=0; i<4; i++) {
     digitalWrite(azul, func1[i]);
     digitalWrite(vermelho, func2[i]);
     digitalWrite(verde, or_port(func1[i], func2[i]));
-    delay(3000);
+    delay(1500);
   }
 }
 
@@ -48,4 +46,3 @@ bool xor_port(bool a, bool b) {
 bool xnor_port(bool a, bool b) {
   return !(!a && b || a && !b);
 }
-
